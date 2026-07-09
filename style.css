@@ -603,3 +603,21 @@ a.contact-row:hover .contact-ring{ border-color: var(--gold); color: var(--gold)
   .float-whatsapp{ bottom: 78px; }
   .float-call{ bottom: 18px; }
 }
+/* Desktop Layout Fix for Screens 1024px and wider */
+@media (min-width: 1024px) {
+  .nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .brand-logo {
+    height: 46px;
+    width: auto;
+  }
+  
+  .nav-links {
+    display: flex;
+    gap: 30px;
+  }
+}

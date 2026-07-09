@@ -174,6 +174,11 @@ section.showcase.alt{ background: var(--panel); }
   border: 1.6px solid var(--gold);
   position: relative; flex-shrink:0;
 }
+.brand-logo {
+  height: 46px;
+  width: auto;
+  display: block;
+}
 .brand-ring::after{
   content:''; position:absolute; inset: 7px;
   border: 1.6px solid var(--gold-dim); border-radius:50%;

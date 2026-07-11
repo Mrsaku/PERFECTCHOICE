@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Instagram Feed Section — Perfect Choices</title>
+<style>
+  :root{
+    --ink:#241f2b;
+    --bg:#fbf7f4;
+    --card:#ffffff;
+    --plum:#5b2a86;
+    --coral:#ff6f5e;
+    --peach:#ffd9a8;
+    --muted:#8a8290;
+    --radius:20px;
+    --border:#efe7e1;
+  }
+
+  *{box-sizing:border-box;}
+
+  body{
+    margin:0;
+    background:var(--bg);
+    font-family:'Segoe UI', system-ui, -apple-system, sans-serif;
+    color:var(--ink);
+  }
+
+  .insta-section{
+    max-width:1140px;
+    margin:0 auto;
+    padding:70px 20px 90px;
+  }
+
+  /* ---------- Header ---------- */
+  .insta-header{
+    display:flex;
+    flex-wrap:wrap;
+    align-items:flex-end;
+    justify-content:space-between;
+    gap:24px;
+    margin-bottom:36px;
+    border-bottom:1px solid var(--border);
+    padding-bottom:28px;
+  }
+
+  .insta-header .eyebrow{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    font-size:13px;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    color:var(--coral);
+    font-weight:700;
+    margin-bottom:10px;
+  }
+
+  .insta-header h2{
+    font-size:clamp(28px,3.6vw,38px);
+    margin:0;
+    font-weight:800;
+    line-height:1.15;
+  }
+
+  .follow-btn{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    background:linear-gradient(135deg, var(--plum), var(--coral));
+    color:#fff;
+    text-decoration:none;
+    font-weight:700;
+    font-size:15px;
+    padding:12px 22px;
+    border-radius:999px;
+    box-shadow:0 8px 20px rgba(91,42,134,0.25);
+    transition:transform .2s ease, box-shadow .2s ease;
+    white-space:nowrap;
+  }
+  .follow-btn:hover{
+    transform:translateY(-2px);
+    box-shadow:0 12px 26px rgba(91,42,134,0.32);
+  }
+  .follow-btn svg{width:18px; height:18px; flex-shrink:0;}
+
+  /* ---------- Tabs ---------- */
+  .insta-tabs{
+    display:flex;
+    gap:10px;
+    margin-bottom:32px;
+  }
+  .insta-tab{
+    border:1px solid var(--border);
+    background:var(--card);
+    color:var(--muted);
+    font-weight:600;
+    font-size:14px;
+    padding:9px 18px;
+    border-radius:999px;
+    cursor:pointer;
+    transition:all .2s ease;
+  }
+  .insta-tab.active{
+    background:var(--ink);
+    color:#fff;
+    border-color:var(--ink);
+  }
+  .insta-tab:hover:not(.active){
+    border-color:var(--coral);
+    color:var(--coral);
+  }
+
+  /* ---------- Grid ---------- */
+  .insta-grid{
+    display:flex;
+    flex-wrap:wrap;
+    gap:26px;
+    justify-content:flex-start;
+  }
+
+  .insta-card{
+    position:relative;
+    flex:1 1 326px;
+    max-width:360px;
+    min-width:300px;
+    background:var(--card);
+    border-radius:var(--radius);
+    overflow:hidden;
+    box-shadow:0 4px 18px rgba(36,31,43,0.06);
+    transition:transform .25s ease, box-shadow .25s ease, opacity .3s ease;
+  }
+
+  .insta-card:hover{
+    transform:translateY(-6px);
+    box-shadow:0 14px 30px rgba(36,31,43,0.14);
+  }
+
+  .insta-card blockquote.instagram-media{
+    margin:0 !important;
+    width:100% !important;
+    min-width:0 !important;
+  }
+
+  /* ---------- Shimmer skeleton (dikhta hai jab tak real embed load nahi hota) ---------- */
+  .insta-skeleton{
+    aspect-ratio:9/14;
+    width:100%;
+    background:linear-gradient(100deg, #f1ecec 30%, #f8f4f4 50%, #f1ecec 70%);
+    background-size:200% 100%;
+    animation:shimmer 1.4s infinite;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+  .insta-skeleton svg{width:34px; height:34px; opacity:.25;}
+
+  @keyframes shimmer{
+    0%{background-position:200% 0;}
+    100%{background-position:-200% 0;}
+  }
+
+  .insta-card[data-loaded="true"] .insta-skeleton{display:none;}
+
+  @media (max-width: 640px){
+    .insta-header{flex-direction:column; align-items:flex-start;}
+    .insta-grid{justify-content:center;}
+  }
+</style>
+</head>
+<body>
+
+<section class="insta-section">
+
+  <div class="insta-header">
+    <div>
+      <span class="eyebrow">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg>
+        Latest from Instagram
+      </span>
+      <h2>Perfect Choices — Reels &amp; Photos</h2>
+    </div>
+    <a class="follow-btn" href="https://www.instagram.com/perfectchoices.in/" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg>
+      @perfectchoices.in Follow karein
+    </a>
+  </div>
+
+  <div class="insta-tabs">
+    <button class="insta-tab active" data-filter="all">Sab</button>
+    <button class="insta-tab" data-filter="reel">Reels</button>
+    <button class="insta-tab" data-filter="photo">Photos</button>
+  </div>
+
+  <div class="insta-grid" id="instaGrid">
+
+    <!-- ===== Real Reel ===== -->
+    <div class="insta-card" data-type="reel" data-loaded="false">
+      <div class="insta-skeleton">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#c9c1c1" stroke-width="1.6"><path d="M8 5v14l11-7z"/></svg>
+      </div>
+      <blockquote class="instagram-media" data-instgrm-captioned
+        data-instgrm-permalink="https://www.instagram.com/reel/DanO3QSTE2R/?utm_source=ig_embed&amp;utm_campaign=loading"
+        data-instgrm-version="14"></blockquote>
+    </div>
+
+    <!-- ===== Aur reel/photo add karne ke liye isi block ko copy karke apna link daalein ===== -->
+    <div class="insta-card" data-type="photo" data-loaded="false">
+      <div class="insta-skeleton">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#c9c1c1" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+      </div>
+      <blockquote class="instagram-media" data-instgrm-captioned
+        data-instgrm-permalink="https://www.instagram.com/p/YOUR_POST_ID_2/"
+        data-instgrm-version="14"></blockquote>
+    </div>
+
+    <div class="insta-card" data-type="reel" data-loaded="false">
+      <div class="insta-skeleton">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#c9c1c1" stroke-width="1.6"><path d="M8 5v14l11-7z"/></svg>
+      </div>
+      <blockquote class="instagram-media" data-instgrm-captioned
+        data-instgrm-permalink="https://www.instagram.com/reel/YOUR_REEL_ID_3/"
+        data-instgrm-version="14"></blockquote>
+    </div>
+
+  </div>
+</section>
+
+<script>
+(function(){
+  var grid = document.getElementById('instaGrid');
+  var tabs = document.querySelectorAll('.insta-tab');
+  var scriptLoaded = false;
+
+  // ---- Tab filtering ----
+  tabs.forEach(function(tab){
+    tab.addEventListener('click', function(){
+      tabs.forEach(function(t){ t.classList.remove('active'); });
+      tab.classList.add('active');
+      var filter = tab.getAttribute('data-filter');
+      grid.querySelectorAll('.insta-card').forEach(function(card){
+        var type = card.getAttribute('data-type');
+        card.style.display = (filter === 'all' || filter === type) ? '' : 'none';
+      });
+    });
+  });
+
+  // ---- Lazy-load Instagram embed script only when section scrolls into view ----
+  function loadInstagramScript(){
+    if (scriptLoaded) return;
+    scriptLoaded = true;
+    var s = document.createElement('script');
+    s.src = '//www.instagram.com/embed.js';
+    s.async = true;
+    s.onload = function(){
+      // Instagram ka script process() call karke embeds render karta hai
+      if (window.instgrm) {
+        window.instgrm.Embeds.process();
+      }
+      // Thodi der baad skeleton hata do (embed ke render hone ke liye time dete hain)
+      setTimeout(function(){
+        document.querySelectorAll('.insta-card').forEach(function(card){
+          card.setAttribute('data-loaded', 'true');
+        });
+      }, 1200);
+    };
+    document.body.appendChild(s);
+  }
+
+  var observer = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if (entry.isIntersecting){
+        loadInstagramScript();
+        observer.disconnect();
+      }
+    });
+  }, { rootMargin: '200px' });
+
+  observer.observe(document.querySelector('.insta-section'));
+})();
+</script>
+
+</body>
+</html>
